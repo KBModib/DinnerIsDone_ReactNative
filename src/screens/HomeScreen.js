@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
       fontWeight:'bold',
       position:"absolute",
       fontSize: 20,
-      top:320,
+      top:290,
       left:153,
 
   },
@@ -126,8 +126,8 @@ const styles = StyleSheet.create({
     // // marginLeft: 5,
     // position:"absolute",
     // backgroundColor:'blue',
-     top:250,
-     left:90,
+     top:296,
+     left:20,
      padding:10
   },
   promo:{
@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
   address:{
     position:"absolute",
     fontSize: 15,
-    top:350,
+    top:320,
     left:155,
   }
 });
