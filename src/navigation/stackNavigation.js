@@ -12,7 +12,7 @@ export default function StackNavigator() {
     return (
         <NavigationContainer>
             <StackNavigation.Navigator>
-                <StackNavigation.Screen name="LoginEmail" component={Login} />
+                <StackNavigation.Screen name="LoginEmail" component={Login} options={{headerShown : false}}/>
                 <StackNavigation.Screen name="LoginOTP" component={LoginOTP} />
                 <StackNavigation.Screen name="TabNavigation" component={TabNavigation} />
             </StackNavigation.Navigator>
