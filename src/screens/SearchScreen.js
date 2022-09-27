@@ -226,11 +226,27 @@ const imageMediterranean = { uri: "https://static.toiimg.com/photo/84895387.cms"
 const imageChinese = { uri: "https://www.thespruceeats.com/thmb/X6mg_2VBCQQ2X8VrLcPTf8_4ce0=/2733x2050/smart/filters:no_upscale()/chinese-take-out-472927590-57d31fff3df78c5833464e7b.jpg" };
 const imageCafe = { uri: "https://image-prod.iol.co.za/16x9/800/Full-service-cafe-bar-and-cocktail-franchise-restaurant-News-Cafe-opened-a-branch-in-Davenport-on-Thursday-Picture-Joelene-Sudhu-Marimuthu-Facebook?source=https://xlibris.public.prod.oc.inl.infomaker.io:8443/opencontent/objects/1879af7e-a4cf-5512-a027-a4fe3e6701ba&operation=CROP&offset=0x338&resize=2048x1152" };
 const imageFineDining = { uri: "https://media.gq-magazine.co.uk/photos/60d5ac0ebb8986e188ac69e6/master/pass/24062021_food_hp.jpg" };
+const imagePopUp = { uri: "https://limetray.com/blog/wp-content/uploads/2019/11/Screen-Shot-2019-11-28-at-1.47.18-PM-1024x661.png" };
+const imageCasualDining = { uri: "https://media-cdn.tripadvisor.com/media/photo-s/1a/50/91/6a/dining-area.jpg" }
+const image1 = { uri: "https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fwww.canva.com%2Fdesign%2FDAFLYCbZb1g%2Fscreen" };
+const image2= { uri: "https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fwww.canva.com%2Fdesign%2FDAFNVki4EAs%2Fscreen" };
+const image3= { uri: "https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fwww.canva.com%2Fdesign%2FDAFNVu1apg4%2Fscreen"}
+const imageIndian= { uri: "https://www.blueosa.com/wp-content/uploads/2020/01/the-best-top-10-indian-dishes.jpg"}
+
 
 
 export default function SearchScreen() {
   return (
     <SafeAreaView>
+        <Image
+      source={require('../../assets/images/wallpaper.png')}
+      style={styles.wallpaper}>
+
+    </Image>
+    <View 
+     style={styles.line}
+     />
+     
       <Text style={styles.label} >Filter search by</Text>
       <ScrollView style={styles.scrol2} >
       <Text style={styles.label2} >Cuisines</Text>
@@ -260,8 +276,8 @@ export default function SearchScreen() {
     
             </TouchableOpacity>
             <TouchableOpacity style={styles.cuisine} >
-            <ImageBackground source={imageChinese} resizeMode="cover" style={styles.image}>
-            <Text style={styles.txt} >Chinese</Text>
+            <ImageBackground source={imageIndian} resizeMode="cover" style={styles.image}>
+            <Text style={styles.txt} >Indian</Text>
             </ImageBackground>
             </TouchableOpacity>
         </ScrollView>
@@ -278,27 +294,30 @@ export default function SearchScreen() {
             </ImageBackground>         
                </TouchableOpacity>
             <TouchableOpacity style={styles.cuisine} >
-        <ImageBackground source={imageCafe} resizeMode="cover" style={styles.image}>
+        <ImageBackground source={imagePopUp} resizeMode="cover" style={styles.image}>
             <Text style={styles.txt} >Pop-Up</Text>
             </ImageBackground>          
               </TouchableOpacity>
               <TouchableOpacity style={styles.cuisine} >
-        <ImageBackground source={imageCafe} resizeMode="cover" style={styles.image}>
+        <ImageBackground source={imageCasualDining} resizeMode="cover" style={styles.image}>
             <Text style={styles.txt} >Casual Dining</Text>
             </ImageBackground>          
               </TouchableOpacity>
         </ScrollView>
         <Text style={styles.label2} >Budget</Text>
         <ScrollView style={styles.scroll}  horizontal={true} vertical={true} >
-            <TouchableOpacity style={styles.budget} >
-                <Text style={styles.txt} >Indian</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.budget} >
-                <Text style={styles.txt} >Mexican</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.budget} >
-                <Text style={styles.txt} >Italian</Text>
-            </TouchableOpacity>
+        <TouchableOpacity style={styles.cuisine} >
+        <ImageBackground source={image2} resizeMode="cover" style={styles.image}>
+            </ImageBackground>          
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.cuisine} >
+        <ImageBackground source={image1} resizeMode="cover" style={styles.image}>
+            </ImageBackground>          
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.cuisine} >
+        <ImageBackground source={image3} resizeMode="cover" style={styles.image}>
+            </ImageBackground>          
+              </TouchableOpacity>
             
         </ScrollView>
        
@@ -334,7 +353,7 @@ const styles = StyleSheet.create({
         color: 'black',
         width: '70%',
         marginLeft: 25,
-        marginTop: 5,
+        marginTop: 9,
     }, 
     budget : {
         padding: 60,
@@ -357,6 +376,24 @@ const styles = StyleSheet.create({
         fontSize: 20,
          fontWeight: 'bold',
          padding:20
+    },
+    wallpaper:{
+        width: '35%',
+        height: '15%',
+        resizeMode: 'cover',
+        justifyContent: 'center',
+        // marginLeft: 5,
+        position:"relative",
+        top:10,
+        left:10,
+    },
+    line:{
+      height:1,
+      width:"90%",
+      backgroundColor: 'black',
+      position:"absolute",
+      top:125,
+      left:20
     },
  
 })

@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions , View, Text, Pressable,  Image } from 'react-native'
+import { StyleSheet, Dimensions , View, Text, ScrollView,  Image, SafeAreaView } from 'react-native'
 import React from 'react'
 import { FlatList, TouchableOpacity } from 'react-native';
 
@@ -39,7 +39,7 @@ import { firebase } from '../Config';
   },[])
   return (
     
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {/* <Text style={styles.title}>
         
         <Pressable
@@ -59,11 +59,8 @@ import { firebase } from '../Config';
     <View 
      style={styles.line}
      />
-     <Image
-      source={require('../../assets/images/istockphoto-598820096-612x612.jpeg')}
-      style={styles.promo}>
-
-    </Image>
+     
+    
     {/* <Pressable
         style={styles.button}
         onPress={() => navigation.navigate('Search')}>
@@ -71,18 +68,33 @@ import { firebase } from '../Config';
         
         <Entypo name="bowl" size={24} color="black" /></Text>
       </Pressable> */}
+      <View style={styles.c}>
+      <Image
+      source={require('../../assets/images/istockphoto-598820096-612x612.jpeg')}
+      style={styles.promo}>
+
+    </Image>
       <FlatList
+      
       // style={styles.list}
       data={users}
       // numColumns={2}
       renderItem={({item})=>(
         // <Pressable style={styles.safe}>
             <View style={styles.container2}>
-               
-                    <Text style={styles.label}>{item.name}</Text>
+              {/* <ScrollView style={styles.scroll}  horizontal={true} vertical={true} > */}
+                <View>
+                <TouchableOpacity style={styles.e}>
+               <Text style={styles.label}>{item.name}</Text>
              
-                    <Text style={styles.address}>{item.Address}</Text>
-                    <Image style={styles.photo1} source ={item.image}/>
+             <Text style={styles.address}>{item.Address}</Text>
+             <Image style={styles.photo1} source ={item.image}/>
+               </TouchableOpacity>
+                  </View>
+              
+               
+                 {/* </ScrollView> */}
+     
              
                         {/* <TouchableOpacity onPress={()=>{navigation.navigate('Details',{recipe:item.recipe})}}> */}
                             {/* <Text style={styles.detailss}>
@@ -94,7 +106,9 @@ import { firebase } from '../Config';
             </View>
       )}
       />
-  </View>
+      </View>
+      
+  </SafeAreaView>
   )
 }
 export default HomeScreen
@@ -108,8 +122,11 @@ const styles = StyleSheet.create({
     position:"absolute",
     top:10,
     left:10,
+    zIndex:0
+
 
   },
+
   label:{
       fontWeight:'bold',
       position:"absolute",
@@ -130,6 +147,9 @@ const styles = StyleSheet.create({
      left:20,
      padding:10
   },
+  e:{
+
+  },
   promo:{
     width:"100%",
     height: '23%',
@@ -139,6 +159,8 @@ const styles = StyleSheet.create({
     position:"absolute",
     top:145,
     left:10,
+    zIndex:0
+
   },
   title: {
     fontSize: 20,
@@ -191,13 +213,15 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   container: {
-    flex: 1,
+    // flex: 1,
     // backgroundColor: '#fff',
-
+    // position:'absolute'
+   
   },
   container2: {
-    flex: 1,
+    // flex: 1,
     // backgroundColor: '#fff',
+    position:'relative',
 
   },
   address:{
@@ -205,5 +229,10 @@ const styles = StyleSheet.create({
     fontSize: 15,
     top:320,
     left:155,
-  }
+  },
+  scroll :{
+    flexDirection: 'row',
+    marginBottom: 10,
+    marginTop: 15,
+}, 
 });
