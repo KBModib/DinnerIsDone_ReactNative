@@ -56,6 +56,7 @@ import { firebase } from '../Config';
       style={styles.image}>
 
     </Image>
+    
     <View 
      style={styles.line}
      />
@@ -68,12 +69,12 @@ import { firebase } from '../Config';
         
         <Entypo name="bowl" size={24} color="black" /></Text>
       </Pressable> */}
-      <View style={styles.c}>
       <Image
       source={require('../../assets/images/istockphoto-598820096-612x612.jpeg')}
       style={styles.promo}>
 
     </Image>
+    
       <FlatList
       
       // style={styles.list}
@@ -83,14 +84,13 @@ import { firebase } from '../Config';
         // <Pressable style={styles.safe}>
             <View style={styles.container2}>
               {/* <ScrollView style={styles.scroll}  horizontal={true} vertical={true} > */}
-                <View>
+                
                 <TouchableOpacity style={styles.e}>
                <Text style={styles.label}>{item.name}</Text>
              
              <Text style={styles.address}>{item.Address}</Text>
              <Image style={styles.photo1} source ={item.image}/>
                </TouchableOpacity>
-                  </View>
               
                
                  {/* </ScrollView> */}
@@ -106,7 +106,6 @@ import { firebase } from '../Config';
             </View>
       )}
       />
-      </View>
       
   </SafeAreaView>
   )
@@ -122,7 +121,6 @@ const styles = StyleSheet.create({
     position:"absolute",
     top:10,
     left:10,
-    zIndex:0
 
 
   },
@@ -219,9 +217,10 @@ const styles = StyleSheet.create({
    
   },
   container2: {
-    // flex: 1,
-    // backgroundColor: '#fff',
-    position:'relative',
+    flex: 1,
+    //backgroundColor: '#fff',
+    // position:'relative',
+  
 
   },
   address:{
